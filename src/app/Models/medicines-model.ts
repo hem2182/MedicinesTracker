@@ -4,6 +4,6 @@ export interface MedicinesModel {
     brand: string;
     price: number;
     quantity: number;
-    expiryDate: Date;
+    expiryDate: string;
     notes: string;
 }

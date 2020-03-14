@@ -9,13 +9,15 @@ import { MedicinesComponent } from './medicines/medicines.component';
 import { AddMedicinesComponent } from './add-medicines/add-medicines.component';
 import { MedicineService } from './Services/medicine.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MedicineDetailsComponent } from './medicine-details/medicine-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MedicinesComponent,
     AddMedicinesComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MedicineDetailsComponent
   ],
   imports: [
     BrowserModule,
