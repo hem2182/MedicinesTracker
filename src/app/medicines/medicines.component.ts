@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicineService } from '../Services/medicine.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MedicinesModel } from '../Models/medicines-model';
 
 @Component({
@@ -15,6 +15,11 @@ export class MedicinesComponent implements OnInit {
   constructor(private medicineService: MedicineService, private router: Router) { }
 
   ngOnInit() {
+    this.GetMedicines();
+  }
+
+  GetMedicines() {
+    this.medicinesData = [];
     this.medicineService.getMedicines().subscribe(
       (response) => {
         this.medicinesData = response;
@@ -24,7 +29,20 @@ export class MedicinesComponent implements OnInit {
   }
 
   AddMedicines() {
-    this.router.navigate(['/add']);
+    this.router.navigate(['/add/0']);
+  }
+
+  UpdateMedicine(medicine: MedicinesModel) {
+    this.router.navigate(['/add/' + medicine.Id]);
+  }
+
+  DeleteMedicine(medicine: MedicinesModel) {
+    this.medicineService.deleteMedicine(medicine.Id).subscribe(
+      (response) => {
+        this.GetMedicines();
+      },
+      (error) => { console.log(error); });
+
   }
 
   validateExpiry(date: string): boolean {

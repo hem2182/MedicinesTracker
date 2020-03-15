@@ -29,6 +29,30 @@ export class MedicineService {
 
   }
 
+  updateMedicines(data: MedicinesModel): Observable<{}> {
+    console.log('Updated Data: ' + data);
+    console.log(data);
+    console.log(data.Name);
+    console.log(data.Quantity);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.http.put('http://localhost:52553/api/Medicines/' + data.Id, data, httpOptions);
+
+  }
+
+  deleteMedicine(value: number): Observable<{}> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.delete('http://localhost:52553/api/medicines/' + value, httpOptions);
+  }
+
   // private handleError(errorResponse: HttpErrorResponse) {
   //   if (errorResponse.error instanceof ErrorEvent) {
   //     console.error('Client Side Error:' + errorResponse.error.message);

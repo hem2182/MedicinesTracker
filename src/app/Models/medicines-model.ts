@@ -1,9 +1,9 @@
 export interface MedicinesModel {
-    id: number;
-    name: string;
-    brand: string;
-    price: number;
-    quantity: number;
-    expiryDate: string;
-    notes: string;
+    Id: number;
+    Name: string;
+    Brand: string;
+    Price: number;
+    Quantity: number;
+    ExpiryDate: string;
+    Notes: string;
 }

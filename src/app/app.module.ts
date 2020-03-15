@@ -10,6 +10,7 @@ import { AddMedicinesComponent } from './add-medicines/add-medicines.component';
 import { MedicineService } from './Services/medicine.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MedicineDetailsComponent } from './medicine-details/medicine-details.component';
+import { CanDeactivateMedicinesGuard } from './Guards/can-deactivate-medicines.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { MedicineDetailsComponent } from './medicine-details/medicine-details.co
     FormsModule,
     HttpClientModule
   ],
-  providers: [MedicineService],
+  providers: [MedicineService, CanDeactivateMedicinesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

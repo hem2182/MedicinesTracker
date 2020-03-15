@@ -16,6 +16,8 @@
             <td>{{medicine.Quantity}}</td>
             <td>{{medicine.Price}}</td>
             <td>{{medicine.ExpiryDate}}</td>
+            <td><button class="btn btn-primary" (click)="UpdateMedicine(medicine)">Update</button></td>
+            <td><button class="btn btn-danger" (click)="DeleteMedicine(medicine)">Delete</button></td>
         </tr>
     </tbody>
 </table>

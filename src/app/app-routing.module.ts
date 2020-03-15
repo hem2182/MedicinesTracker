@@ -4,12 +4,13 @@ import { MedicinesComponent } from './medicines/medicines.component';
 import { AddMedicinesComponent } from './add-medicines/add-medicines.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MedicineDetailsComponent } from './medicine-details/medicine-details.component';
+import { CanDeactivateMedicinesGuard } from './Guards/can-deactivate-medicines.guard';
 
 
 const routes: Routes = [
   { path: 'medicines', component: MedicinesComponent },
   { path: 'medicines/:id', component: MedicineDetailsComponent },
-  { path: 'add', component: AddMedicinesComponent },
+  { path: 'add/:id', component: AddMedicinesComponent, canDeactivate: [CanDeactivateMedicinesGuard] },
   { path: '', component: MedicinesComponent },
   { path: '*', component: PageNotFoundComponent }
 ];

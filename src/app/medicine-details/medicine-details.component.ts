@@ -10,7 +10,7 @@ import { MedicinesModel } from '../Models/medicines-model';
 })
 export class MedicineDetailsComponent implements OnInit {
 
-  medicineDetails: MedicinesModel = { id: 0, name: '', brand: '', notes: '', quantity: 0, expiryDate: '', price: 0.0 }
+  medicineDetails: MedicinesModel = { Id: 0, Name: '', Brand: '', Notes: '', Quantity: 0, ExpiryDate: '', Price: 0.0 }
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private medicineService: MedicineService) { }
 
